@@ -7,7 +7,7 @@
     Private myBindingLokasi As New BindingSource
     Private isCboPrepared As Boolean
 
-    Public Sub New(_dbType As String, _connMain As Object, _addNewValues As String, _addNewFields As String, _schemaTmp As String, _schemaHRD As String)
+    Public Sub New(_dbType As String, _connMain As Object, _addNewValues As String, _addNewFields As String, _schemaTmp As String, _schemaPromotion As String)
         Try
             ' This call is required by the Windows Form Designer.
             InitializeComponent()
@@ -17,7 +17,7 @@
                 .dbType = _dbType
                 .dbMain = _connMain
                 .schemaTmp = _schemaTmp
-                .schemaHRD = _schemaHRD
+                .schemaPromotion = _schemaPromotion
             End With
 
             With ADD_INFO_
@@ -38,7 +38,7 @@
             Me.Cursor = Cursors.WaitCursor
             Call myCDBConnection.OpenConn(CONN_.dbMain)
 
-            stSQL = "SELECT keterangan FROM msgeneral where kategori='lokasi' order by keterangan;"
+            stSQL = "SELECT keterangan FROM " & CONN_.schemaPromotion & ".msgeneral where kategori='lokasi' order by keterangan;"
             Call myCDBOperation.SetCbo_(CONN_.dbMain, CONN_.comm, CONN_.reader, stSQL, myDataTableCboLokasi, myBindingLokasi, cboLokasi, "T_" & cboLokasi.Name, "keterangan", "keterangan", isCboPrepared)
         Catch ex As Exception
             Call myCShowMessage.ShowErrMsg("Pesan Error: " & ex.Message, "FormRegisterNewUser_Load Error")
@@ -81,12 +81,12 @@
                 Call myCDBConnection.OpenConn(CONN_.dbMain)
 
                 Dim isExist As Boolean
-                isExist = myCDBOperation.IsExistRecords(CONN_.dbMain, CONN_.comm, CONN_.reader, "rid", "msuser", "userid='" & myCStringManipulation.SafeSqlLiteral(tbUserID.Text) & "'")
+                isExist = myCDBOperation.IsExistRecords(CONN_.dbMain, CONN_.comm, CONN_.reader, "rid", CONN_.schemaPromotion & ".msuser", "userid='" & myCStringManipulation.SafeSqlLiteral(tbUserID.Text) & "'")
 
                 If Not isExist Then
                     newValues = "'" & myCStringManipulation.SafeSqlLiteral(tbUserID.Text) & "','" & myCStringManipulation.GetSHA1Hash(tbPassword.Text) & "','" & cbSuperuser.Checked & "','" & IIf(cbSemuaLokasi.Checked, "All", myCStringManipulation.SafeSqlLiteral(cboLokasi.SelectedValue)) & "'," & ADD_INFO_.newValues
                     newFields = "userid,passwd,superuser,lokasi," & ADD_INFO_.newFields
-                    Call myCDBOperation.InsertData(CONN_.dbMain, CONN_.comm, "msuser", newValues, newFields)
+                    Call myCDBOperation.InsertData(CONN_.dbMain, CONN_.comm, CONN_.schemaPromotion & ".msuser", newValues, newFields)
                 Else
                     Call myCShowMessage.ShowWarning("User ID " & Trim(tbUserID.Text) & " sudah ada!")
                 End If

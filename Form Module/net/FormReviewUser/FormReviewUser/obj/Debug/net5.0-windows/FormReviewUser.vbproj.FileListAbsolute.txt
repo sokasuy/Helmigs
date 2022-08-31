@@ -82,7 +82,6 @@ G:\DESKTOP APPLICATION\HELMIGS\Form Module\net\FormReviewUser\FormReviewUser\bin
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\net\FormReviewUser\FormReviewUser\bin\Debug\net5.0-windows\CShowMessage.pdb
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\net\FormReviewUser\FormReviewUser\bin\Debug\net5.0-windows\CStringManipulation.pdb
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\net\FormReviewUser\FormReviewUser\bin\Debug\net5.0-windows\CFileIO.pdb
-G:\DESKTOP APPLICATION\HELMIGS\Form Module\net\FormReviewUser\FormReviewUser\obj\Debug\net5.0-windows\FormReviewUser.vbproj.AssemblyReference.cache
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\net\FormReviewUser\FormReviewUser\obj\Debug\net5.0-windows\FormReviewUser.FormReviewUser.resources
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\net\FormReviewUser\FormReviewUser\obj\Debug\net5.0-windows\FormReviewUser.vbproj.GenerateResource.cache
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\net\FormReviewUser\FormReviewUser\obj\Debug\net5.0-windows\FormReviewUser.GeneratedMSBuildEditorConfig.editorconfig

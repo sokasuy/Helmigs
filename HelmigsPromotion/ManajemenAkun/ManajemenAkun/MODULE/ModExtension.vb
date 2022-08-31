@@ -17,7 +17,7 @@
 
         Public dbType As String
         Public schemaTmp As String
-        Public schemaHRD As String
+        Public schemaPromotion As String
 
         Public comm As Object
         Public adapter As Object

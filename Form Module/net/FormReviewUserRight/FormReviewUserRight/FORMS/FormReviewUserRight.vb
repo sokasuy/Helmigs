@@ -24,7 +24,7 @@
     Private myBindingUsername As New BindingSource
     Private myBindingFormList As New BindingSource
 
-    Public Sub New(_dbType As String, _connMain As Object, _username As String, _superuser As Boolean, _dtTableUserRights As DataTable, _addNewValue As String, _addNewFields As String, _addUpdateString As String, _schemaTmp As String, _schemaHRD As String)
+    Public Sub New(_dbType As String, _connMain As Object, _username As String, _superuser As Boolean, _dtTableUserRights As DataTable, _addNewValue As String, _addNewFields As String, _addUpdateString As String, _schemaTmp As String, _schemaPromotion As String)
         Try
             ' This call is required by the designer.
             InitializeComponent()
@@ -34,7 +34,7 @@
                 .dbType = _dbType
                 .dbMain = _connMain
                 .schemaTmp = _schemaTmp
-                .schemaHRD = _schemaHRD
+                .schemaPromotion = _schemaPromotion
             End With
             With USER_
                 .username = _username
@@ -65,9 +65,9 @@
 
             Me.Cursor = Cursors.WaitCursor
             Call myCDBConnection.OpenConn(CONN_.dbMain)
-            stSQL = "SELECT userid,superuser FROM msuser WHERE block='False' and superuser='False' order by userid;"
+            stSQL = "SELECT userid,superuser FROM " & CONN_.schemaPromotion & ".msuser WHERE block='False' and superuser='False' order by userid;"
             Call myCDBOperation.SetCbo_(CONN_.dbMain, CONN_.comm, CONN_.reader, stSQL, myDataTableCboUsername, myBindingUsername, cboUserID, "T_Username", "userid", "userid", isCboPrepared)
-            stSQL = "SELECT formname,displayname FROM msformlist WHERE block='False' order by displayname;"
+            stSQL = "SELECT formname,displayname FROM " & CONN_.schemaPromotion & ".msformlist WHERE block='False' order by displayname;"
             Call myCDBOperation.SetCbo_(CONN_.dbMain, CONN_.comm, CONN_.reader, stSQL, myDataTableCboFormName, myBindingFormList, cboFormName, "T_FormName", "formname", "displayname", isCboPrepared)
         Catch ex As Exception
             Call myCShowMessage.ShowErrMsg("Pesan Error: " & ex.Message, "FormReviewUserRight_Load Error")
@@ -108,7 +108,7 @@
                 banyakPages = 0
                 mKriteria = IIf(IsNothing(mKriteria), "", mKriteria)
 
-                stSQL = "SELECT count(*) FROM msuserright as u INNER JOIN msformlist as f on u.formname=f.formname WHERE ((upper(" & IIf(cboKriteria.SelectedItem = "USERID", "u.userid", "f.displayname") & ") LIKE '%" & mKriteria.ToUpper & "%'));"
+                stSQL = "SELECT count(*) FROM " & CONN_.schemaPromotion & ".msuserright as u INNER JOIN " & CONN_.schemaPromotion & ".msformlist as f on u.formname=f.formname WHERE ((upper(" & IIf(cboKriteria.SelectedItem = "USERID", "u.userid", "f.displayname") & ") LIKE '%" & mKriteria.ToUpper & "%'));"
                 mJumlah = Integer.Parse(myCDBOperation.GetDataIndividual(myConn, myComm, myReader, stSQL))
 
                 If (mJumlah > 10) Then
@@ -144,7 +144,7 @@
                         "SELECT sub.rid,sub.userid,sub.formname,sub.displayname,sub.menambah,sub.memperbaharui,sub.menghapus,sub.melihat,sub.mencetak,sub.created_at,sub.updated_at " &
                         "FROM ( " &
                             "SELECT tbl.rid,tbl.userid,tbl.formname,f.displayname,tbl.menambah,tbl.memperbaharui,tbl.menghapus,tbl.melihat,tbl.mencetak,tbl.created_at,tbl.updated_at " &
-                            "FROM msuserright as tbl INNER JOIN msformlist as f on tbl.formname=f.formname " &
+                            "FROM " & CONN_.schemaPromotion & ".msuserright as tbl INNER JOIN " & CONN_.schemaPromotion & ".msformlist as f on tbl.formname=f.formname " &
                             "WHERE ((upper(" & IIf(cboKriteria.SelectedItem = "USERID", "tbl.userid", "f.displayname") & ") LIKE '%" & mKriteria.ToUpper & "%')) " &
                             "ORDER BY (case when tbl.updated_at is null then tbl.created_at else tbl.updated_at end) DESC, tbl.rid DESC " &
                             "LIMIT " & offSet &
@@ -406,7 +406,7 @@
 
                     Dim isConfirm = myCShowMessage.GetUserResponse("Apakah mau menghapus hak user " & dgvView.CurrentRow.Cells("userid").Value & " untuk form " & dgvView.CurrentRow.Cells("displayname").Value & "?" & ControlChars.NewLine & "Data yang sudah dihapus tidak dapat dikembalikan lagi!")
                     If (isConfirm = DialogResult.Yes) Then
-                        Call myCDBOperation.DelDbRecords(CONN_.dbMain, CONN_.comm, "msuserright", "rid=" & dgvView.CurrentRow.Cells("rid").Value, CONN_.dbType)
+                        Call myCDBOperation.DelDbRecords(CONN_.dbMain, CONN_.comm, CONN_.schemaPromotion & ".msuserright", "rid=" & dgvView.CurrentRow.Cells("rid").Value, CONN_.dbType)
                         Call myCShowMessage.ShowDeletedMsg("Hak pengguna " & dgvView.CurrentRow.Cells("userid").Value & " untuk form " & dgvView.CurrentRow.Cells("displayname").Value)
                         Call SetDGV(CONN_.dbMain, CONN_.comm, CONN_.reader, 10, myDataTableDGV, mCari, True)
                     Else
@@ -483,13 +483,13 @@
                 'created_at = Now
                 'ADD_INFO_.newValues = "'" & created_at & "'"
                 If isNew Then
-                    isExist = myCDBOperation.IsExistRecords(CONN_.dbMain, CONN_.comm, CONN_.reader, "rid", "msuserright", "userid='" & myCStringManipulation.SafeSqlLiteral(cboUserID.SelectedValue) & "' and formname='" & myCStringManipulation.SafeSqlLiteral(cboFormName.SelectedValue) & "'")
+                    isExist = myCDBOperation.IsExistRecords(CONN_.dbMain, CONN_.comm, CONN_.reader, "rid", CONN_.schemaPromotion & ".msuserright", "userid='" & myCStringManipulation.SafeSqlLiteral(cboUserID.SelectedValue) & "' and formname='" & myCStringManipulation.SafeSqlLiteral(cboFormName.SelectedValue) & "'")
                     If Not isExist Then
                         'CREATE NEW
                         newValues = "'" & myCStringManipulation.SafeSqlLiteral(cboUserID.SelectedValue) & "','" & myCStringManipulation.SafeSqlLiteral(cboFormName.SelectedValue) & "','" & cbCreate.Checked & "','" & cbRead.Checked & "','" & cbUpdate.Checked & "','" & cbDelete.Checked & "','" & cbPrint.Checked & "'," & ADD_INFO_.newValues
                         'Call myCDBOperation.SaveUpdatedAt(CONN_.dbMain, CONN_.comm, CONN_.reader, newValues, "msuserright")
                         newFields = "userid,formname,menambah,melihat,memperbaharui,menghapus,mencetak," & ADD_INFO_.newFields
-                        Call myCDBOperation.InsertData(CONN_.dbMain, CONN_.comm, "msuserright", newValues, newFields)
+                        Call myCDBOperation.InsertData(CONN_.dbMain, CONN_.comm, CONN_.schemaPromotion & ".msuserright", newValues, newFields)
                         Call myCShowMessage.ShowSavedMsg("Hak pengguna " & cboUserID.SelectedValue & " pada form " & DirectCast(cboFormName.SelectedItem, DataRowView).Item("displayname"))
                         Call btnTampilkan_Click(sender, e)
 
@@ -539,7 +539,7 @@
                     If Not IsNothing(updateString) Then
                         updateString &= "," & ADD_INFO_.updateString
                         'Call myCDBOperation.EditUpdatedAt(CONN_.dbMain, CONN_.comm, CONN_.reader, updateString, CONN_.schemaHRD & ".msuserright", CONN_.dbType)
-                        Call myCDBOperation.UpdateData(CONN_.dbMain, CONN_.comm, "msuserright", updateString, "rid=" & arrDefValues(0))
+                        Call myCDBOperation.UpdateData(CONN_.dbMain, CONN_.comm, CONN_.schemaPromotion & ".msuserright", updateString, "rid=" & arrDefValues(0))
                         Call myCShowMessage.ShowUpdatedMsg("Hak pengguna " & cboUserID.SelectedValue & " pada form " & DirectCast(cboFormName.SelectedItem, DataRowView).Item("displayname"))
 
                         Call myCFormManipulation.ResetForm(gbDataEntry)

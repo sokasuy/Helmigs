@@ -313,11 +313,13 @@ G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.Data.SqlClient.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.Identity.Client.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Abstractions.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Logging.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.SqlServer.Server.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Microsoft.Win32.SystemEvents.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\Npgsql.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\System.Configuration.ConfigurationManager.dll
@@ -325,6 +327,7 @@ G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\System.Diagnostics.PerformanceCounter.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\System.Drawing.Common.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\System.Memory.Data.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\System.Runtime.Caching.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\System.Runtime.CompilerServices.Unsafe.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\ManajemenAkun\ManajemenAkun\bin\Debug\net5.0-windows\System.Security.AccessControl.dll

@@ -18,7 +18,7 @@
     Private myBindingLokasi As New BindingSource
     Private isCboPrepared As Boolean
 
-    Public Sub New(_dbType As String, _connMain As Object, _schemaTmp As String, _schemaHRD As String, _addUpdateString As String)
+    Public Sub New(_dbType As String, _connMain As Object, _schemaTmp As String, _schemaPromotion As String, _addUpdateString As String)
         Try
             ' This call is required by the designer.
             InitializeComponent()
@@ -28,7 +28,7 @@
                 .dbType = _dbType
                 .dbMain = _connMain
                 .schemaTmp = _schemaTmp
-                .schemaHRD = _schemaHRD
+                .schemaPromotion = _schemaPromotion
             End With
             With ADD_INFO_
                 .updateString = _addUpdateString
@@ -55,7 +55,7 @@
             Me.Cursor = Cursors.WaitCursor
             Call myCDBConnection.OpenConn(CONN_.dbMain)
 
-            stSQL = "SELECT keterangan FROM msgeneral where kategori='lokasi' order by keterangan;"
+            stSQL = "SELECT keterangan FROM " & CONN_.schemaPromotion & ".msgeneral where kategori='lokasi' order by keterangan;"
             Call myCDBOperation.SetCbo_(CONN_.dbMain, CONN_.comm, CONN_.reader, stSQL, myDataTableCboLokasi, myBindingLokasi, cboLokasi, "T_" & cboLokasi.Name, "keterangan", "keterangan", isCboPrepared)
         Catch ex As Exception
             Call myCShowMessage.ShowErrMsg("Pesan Error: " & ex.Message, "FormReviewUser_Load Error")
@@ -96,7 +96,7 @@
                 banyakPages = 0
                 mKriteria = IIf(IsNothing(mKriteria), "", mKriteria)
 
-                stSQL = "SELECT count(*) FROM msuser as u WHERE ((upper(" & IIf(cboKriteria.SelectedItem = "USERID", "u.userid", "f.display_name") & ") LIKE '%" & mKriteria.ToUpper & "%'));"
+                stSQL = "SELECT count(*) FROM " & CONN_.schemaPromotion & ".msuser as u WHERE ((upper(" & IIf(cboKriteria.SelectedItem = "USERID", "u.userid", "f.display_name") & ") LIKE '%" & mKriteria.ToUpper & "%'));"
                 mJumlah = Integer.Parse(myCDBOperation.GetDataIndividual(myConn, myComm, myReader, stSQL))
 
                 If (mJumlah > 10) Then
@@ -132,7 +132,7 @@
                         "SELECT sub.rid,sub.userid,sub.passwd,sub.created_at,sub.updated_at " &
                         "FROM ( " &
                             "SELECT tbl.rid,tbl.userid,tbl.passwd,tbl.created_at,tbl.updated_at " &
-                            "FROM msuser as tbl " &
+                            "FROM " & CONN_.schemaPromotion & ".msuser as tbl " &
                             "WHERE ((upper(" & IIf(cboKriteria.SelectedItem = "USERID", "tbl.userid", "f.display_name") & ") LIKE '%" & mKriteria.ToUpper & "%')) " &
                             "ORDER BY (case when tbl.updated_at is null then tbl.created_at else tbl.updated_at end) DESC, tbl.rid DESC " &
                             "LIMIT " & offSet &
@@ -389,7 +389,7 @@
 
                     Dim isConfirm = myCShowMessage.GetUserResponse("Apakah mau menghapus user " & dgvView.CurrentRow.Cells("userid").Value & "?" & ControlChars.NewLine & "Data yang sudah dihapus tidak dapat dikembalikan lagi!")
                     If (isConfirm = DialogResult.Yes) Then
-                        Call myCDBOperation.DelDbRecords(CONN_.dbMain, CONN_.comm, "msuser", "rid=" & dgvView.CurrentRow.Cells("rid").Value, CONN_.dbType)
+                        Call myCDBOperation.DelDbRecords(CONN_.dbMain, CONN_.comm, CONN_.schemaPromotion & ".msuser", "rid=" & dgvView.CurrentRow.Cells("rid").Value, CONN_.dbType)
                         Call myCShowMessage.ShowDeletedMsg("User " & dgvView.CurrentRow.Cells("userid").Value)
                         Call SetDGV(CONN_.dbMain, CONN_.comm, CONN_.reader, 10, myDataTableDGV, mCari, True)
                     Else
@@ -446,7 +446,7 @@
                 If Not IsNothing(updateString) Then
                     updateString &= "," & ADD_INFO_.updateString
                     'Call myCDBOperation.EditUpdatedAt(CONN_.dbMain, CONN_.comm, CONN_.reader, updateString, CONN_.schemaHRD & ".msuser", CONN_.dbType)
-                    Call myCDBOperation.UpdateData(CONN_.dbMain, CONN_.comm, "msuser", updateString, "rid=" & arrDefValues(0))
+                    Call myCDBOperation.UpdateData(CONN_.dbMain, CONN_.comm, CONN_.schemaPromotion & ".msuser", updateString, "rid=" & arrDefValues(0))
                     Call myCShowMessage.ShowUpdatedMsg("Password userid " & tbUsername.Text)
 
                     Call myCFormManipulation.ResetForm(gbDataEntry)

@@ -28,7 +28,7 @@
 
                 _dbType = myCFileIO.ReadIniFile("DATABASE", "DBTYPE", pathFileSetting)
                 _schemaTmp = myCFileIO.ReadIniFile(_dbType, "SCHEMA_TMP", pathFileSetting)
-                _schemaHRD = myCFileIO.ReadIniFile(_dbType, "SCHEMA_HRD", pathFileSetting)
+                _schemaHRD = myCFileIO.ReadIniFile(_dbType, "SCHEMA_PROMOTION", pathFileSetting)
                 Call myCDBConnection.SetDBParameter(_connMain, _dbType, "SERVER_NAME", "DB_NAME", "", pathFileSetting, "PORT", "postgres", "1234567", "")
             Else
                 'INI GAK DIPAKAI
