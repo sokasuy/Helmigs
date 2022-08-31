@@ -1,0 +1,15 @@
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\bin\Debug\FormGenerateMasterKodePromosi.dll.config
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\bin\Debug\FormGenerateMasterKodePromosi.dll
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\bin\Debug\FormGenerateMasterKodePromosi.pdb
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\bin\Debug\FormGenerateMasterKodePromosi.xml
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\bin\Debug\CMiscFunction.dll
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\bin\Debug\CMiscFunction.pdb
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\bin\Debug\CMiscFunction.xml
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\obj\Debug\FormGenerateMasterKodePromosi.FormGenerateMasterKodePromosi.resources
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\obj\Debug\FormGenerateMasterKodePromosi.Resources.resources
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\obj\Debug\FormGenerateMasterKodePromosi.vbproj.GenerateResource.cache
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\obj\Debug\FormGenerateMasterKodePromosi.vbproj.CoreCompileInputs.cache
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\obj\Debug\FormGenerateMasterKodePromosi.vbproj.CopyComplete
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\obj\Debug\FormGenerateMasterKodePromosi.dll
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\obj\Debug\FormGenerateMasterKodePromosi.xml
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKodePromosi\obj\Debug\FormGenerateMasterKodePromosi.pdb

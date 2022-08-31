@@ -1,0 +1,11 @@
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\bin\Debug\FormAttachmentKonsumen.dll.config
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\bin\Debug\FormAttachmentKonsumen.dll
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\bin\Debug\FormAttachmentKonsumen.pdb
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\bin\Debug\FormAttachmentKonsumen.xml
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.FormAttachmentKonsumen.resources
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.Resources.resources
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.vbproj.GenerateResource.cache
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.vbproj.CoreCompileInputs.cache
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.dll
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.xml
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.pdb

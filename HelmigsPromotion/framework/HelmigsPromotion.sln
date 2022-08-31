@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelmigsPromotion", "HelmigsPromotion\HelmigsPromotion.vbproj", "{3B0D2F1D-42EA-4E54-B5B3-34F25F41D63C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{92028908-97BC-482B-92F8-41AB388385D1} = {92028908-97BC-482B-92F8-41AB388385D1}
+		{A2F99236-54E2-4270-BC08-39937BA54D26} = {A2F99236-54E2-4270-BC08-39937BA54D26}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormGenerateMasterKuponUndian", "..\..\Form Module\framework\FormGenerateMasterKuponUndian\FormGenerateMasterKuponUndian.vbproj", "{92028908-97BC-482B-92F8-41AB388385D1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormInputDataKonsumen", "..\..\Form Module\framework\FormInputDataKonsumen\FormInputDataKonsumen.vbproj", "{A2F99236-54E2-4270-BC08-39937BA54D26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{596AFB44-7D38-46B6-962B-087AD075B485} = {596AFB44-7D38-46B6-962B-087AD075B485}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormAttachmentKonsumen", "..\..\Form Module\framework\FormAttachmentKonsumen\FormAttachmentKonsumen.vbproj", "{596AFB44-7D38-46B6-962B-087AD075B485}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B0D2F1D-42EA-4E54-B5B3-34F25F41D63C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0D2F1D-42EA-4E54-B5B3-34F25F41D63C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0D2F1D-42EA-4E54-B5B3-34F25F41D63C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0D2F1D-42EA-4E54-B5B3-34F25F41D63C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92028908-97BC-482B-92F8-41AB388385D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92028908-97BC-482B-92F8-41AB388385D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92028908-97BC-482B-92F8-41AB388385D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92028908-97BC-482B-92F8-41AB388385D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F99236-54E2-4270-BC08-39937BA54D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F99236-54E2-4270-BC08-39937BA54D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F99236-54E2-4270-BC08-39937BA54D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F99236-54E2-4270-BC08-39937BA54D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596AFB44-7D38-46B6-962B-087AD075B485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596AFB44-7D38-46B6-962B-087AD075B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596AFB44-7D38-46B6-962B-087AD075B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596AFB44-7D38-46B6-962B-087AD075B485}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13EACFA0-A4C6-428F-BBA3-87D6F0F10901}
+	EndGlobalSection
+EndGlobal

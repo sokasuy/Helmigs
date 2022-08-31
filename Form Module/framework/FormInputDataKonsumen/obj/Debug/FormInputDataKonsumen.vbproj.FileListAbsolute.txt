@@ -1,0 +1,12 @@
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\bin\Debug\FormInputDataKonsumen.dll.config
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\bin\Debug\FormInputDataKonsumen.dll
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\bin\Debug\FormInputDataKonsumen.pdb
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\bin\Debug\FormInputDataKonsumen.xml
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\obj\Debug\FormInputDataKonsumen.vbproj.AssemblyReference.cache
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\obj\Debug\FormInputDataKonsumen.FormInputDataKonsumen.resources
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\obj\Debug\FormInputDataKonsumen.Resources.resources
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\obj\Debug\FormInputDataKonsumen.vbproj.GenerateResource.cache
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\obj\Debug\FormInputDataKonsumen.vbproj.CoreCompileInputs.cache
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\obj\Debug\FormInputDataKonsumen.dll
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\obj\Debug\FormInputDataKonsumen.xml
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormInputDataKonsumen\obj\Debug\FormInputDataKonsumen.pdb
