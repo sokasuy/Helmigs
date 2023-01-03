@@ -207,7 +207,8 @@
                     banyakPages = 0
                     mKriteria = IIf(IsNothing(mKriteria), "", mKriteria)
 
-                    stSQL = "SELECT count(*) FROM " & tableName(0) & " as tbl INNER JOIN " & tableName(1) & " as tbl2 on tbl.accountinstagram=tbl2.accountinstagram WHERE ((upper(" & IIf(mSelectedCriteria.ToLower = "kupon", "tbl2.", "tbl.") & mSelectedCriteria & ") LIKE '%" & mKriteria.ToUpper & "%'));"
+                    'stSQL = "SELECT count(*) FROM " & tableName(0) & " as tbl INNER JOIN " & tableName(1) & " as tbl2 on tbl.accountinstagram=tbl2.accountinstagram WHERE ((upper(" & IIf(mSelectedCriteria.ToLower = "kupon", "tbl2.", "tbl.") & mSelectedCriteria & ") LIKE '%" & mKriteria.ToUpper & "%'));"
+                    stSQL = "SELECT count(*) FROM (SELECT DISTINCT (tbl.accountinstagram ) as accountig FROM " & tableName(0) & " as tbl INNER JOIN " & tableName(1) & " as tbl2 on tbl.accountinstagram=tbl2.accountinstagram WHERE ((upper(" & IIf(mSelectedCriteria.ToLower = "kupon", "tbl2.", "tbl.") & mSelectedCriteria & ") LIKE '%" & mKriteria.ToUpper & "%'))) as subtbl;"
                     mJumlah = Integer.Parse(myCDBOperation.GetDataIndividual(myConn, myComm, myReader, stSQL))
 
                     If (mJumlah > 10) Then
@@ -394,7 +395,7 @@
             ElseIf (_contentView = "LIHAT KUPON") Then
                 stSQL = "SELECT tbl.kupon,tbl.produk,tbl.periode
                         FROM " & tableName(1) & " as tbl 
-                        WHERE (upper(tbl." & mSelectedCriteria & ") like '%" & mKriteria.ToUpper & "%')
+                        WHERE (upper(tbl.accountinstagram) like '%" & mKriteria.ToUpper & "%')
                         ORDER BY tbl.rid ASC;"
                 myDataTable = myCDBOperation.GetDataTableUsingReader(myConn, myComm, myReader, stSQL, "TBL " & lblTitle.Text)
                 myBindingTable.DataSource = myDataTable
@@ -974,10 +975,90 @@
 
     Private Sub dgvView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvView.CellClick
         Try
-            mCari = myCStringManipulation.SafeSqlLiteral(dgvView.CurrentRow.Cells("accountinstagram").Value)
-            Call SetDGV(CONN_.dbMain, CONN_.comm, CONN_.reader, 10, dgvKupon, myDataTableDGVKupon, myBindingTableDGVKupon, mCari, "LIHAT KUPON", True)
+            Call SetDGV(CONN_.dbMain, CONN_.comm, CONN_.reader, 10, dgvKupon, myDataTableDGVKupon, myBindingTableDGVKupon, myCStringManipulation.SafeSqlLiteral(dgvView.CurrentRow.Cells("accountinstagram").Value), "LIHAT KUPON", True)
         Catch ex As Exception
             Call myCShowMessage.ShowErrMsg("Pesan Error: " & ex.Message, "dgvView_CellClick Error")
+        End Try
+    End Sub
+
+    Private Sub tbPathSimpan_Click(sender As System.Object, e As System.EventArgs) Handles tbPathSimpan.Click
+        Try
+            fbdExport.ShowDialog()
+            'di cek apakah char terakhir pada string path adalah \ atw gak
+            'klw gak, maka harus dikasih \, kalau sudah ada, misal kalau user pilih lokasi di C:\, maka tidak ditambahi \ lagi
+            If (fbdExport.SelectedPath.Length > 0) Then
+                If (fbdExport.SelectedPath.Chars(fbdExport.SelectedPath.Count - 1) <> "\") Then
+                    tbPathSimpan.Text = fbdExport.SelectedPath & "\"
+                Else
+                    tbPathSimpan.Text = fbdExport.SelectedPath
+                End If
+            End If
+        Catch ex As Exception
+            Call myCShowMessage.ShowErrMsg("Pesan Error: " & ex.Message, "tbPathSimpan_Click Error")
+        End Try
+    End Sub
+
+    Private Sub btnBrowse_Click(sender As System.Object, e As System.EventArgs) Handles btnBrowse.Click
+        Try
+            fbdExport.ShowDialog()
+            'di cek apakah char terakhir pada string path adalah \ atw gak
+            'klw gak, maka harus dikasih \, kalau sudah ada, misal kalau user pilih lokasi di C:\, maka tidak ditambahi \ lagi
+            If (fbdExport.SelectedPath.Length > 0) Then
+                If (fbdExport.SelectedPath.Chars(fbdExport.SelectedPath.Count - 1) <> "\") Then
+                    tbPathSimpan.Text = fbdExport.SelectedPath & "\"
+                Else
+                    tbPathSimpan.Text = fbdExport.SelectedPath
+                End If
+            End If
+        Catch ex As Exception
+            Call myCShowMessage.ShowErrMsg("Pesan Error: " & ex.Message, "btnBrowse_Click Error")
+        End Try
+    End Sub
+
+    Private Sub btnCetakExcel_Click(sender As System.Object, e As System.EventArgs) Handles btnExportExcel.Click
+        Try
+            Me.Cursor = Cursors.WaitCursor
+            Call myCDBConnection.OpenConn(CONN_.dbMain)
+
+            Dim b As String
+            Dim xlspath As String
+            Dim xlsfilename As String
+            Dim myDataTableExcel As New DataTable
+            Dim sheetName As String
+
+            xlspath = tbPathSimpan.Text
+            b = tbNamaSimpan.Text
+
+            If (xlspath.Length > 0) Then
+                xlsfilename = xlspath & b & "_" & Format(Now(), "ddMMMyyyy")
+                sheetName = "Kupon_" & Format(Now(), "ddMMMyyyy")
+
+                stSQL = "SELECT tbl.rid,tbl.nik,tbl.nama,tbl.accountinstagram,tbl.nomorwa,subtbl.jumlahkupon,tbl2.kupon,tbl.created_at,tbl.updated_at 
+		                FROM promotion.mskonsumen AS tbl 
+		                INNER JOIN promotion.msmasterkuponundian AS tbl2 ON tbl.accountinstagram = tbl2.accountinstagram 
+		                INNER JOIN (SELECT tbl.accountinstagram,tbl.nomorwa,COUNT ( tbl2.kupon ) AS jumlahkupon
+			                FROM promotion.mskonsumen AS tbl INNER JOIN promotion.msmasterkuponundian AS tbl2 ON tbl.accountinstagram = tbl2.accountinstagram 
+			                WHERE	( ( UPPER ( tbl.accountinstagram ) LIKE'%%' ) ) 
+			                GROUP BY tbl.accountinstagram,tbl.nomorwa
+			                ORDER BY( CASE WHEN tbl.updated_at IS NULL THEN tbl.created_at ELSE tbl.updated_at END ) DESC,tbl.rid DESC) as subtbl on subtbl.accountinstagram=tbl.accountinstagram		
+		                WHERE	( ( UPPER ( tbl.accountinstagram ) LIKE'%%' ) ) 
+		                GROUP BY tbl.rid,tbl.nik,tbl.nama,tbl.accountinstagram,tbl.nomorwa,subtbl.jumlahkupon,tbl2.kupon,tbl.created_at,tbl.updated_at 
+		                ORDER BY ( CASE WHEN tbl.updated_at IS NULL THEN tbl.created_at ELSE tbl.updated_at END ) DESC,	tbl.rid DESC;"
+                myDataTableExcel = myCDBOperation.GetDataTableUsingReader(CONN_.dbMain, CONN_.comm, CONN_.reader, stSQL, "T_DetailPromotion")
+
+                Call myCFileIO.PopulateSheet(myDataTableExcel, xlsfilename, sheetName)
+
+                'Call myCFileIO.ExportDataGridViewToExcel(dgvView, xlsfilename, "EXPORT EXCEL")
+
+                Call myCShowMessage.ShowInfo(" Export ke excel sukses, dengan nama " & xlsfilename & ".xls", "Export Complete")
+            Else
+                Call myCShowMessage.ShowWarning("Silahkan pilih terlebih dahulu lokasi untuk menyimpan file", "Perhatian")
+            End If
+        Catch ex As Exception
+            Call myCShowMessage.ShowErrMsg("Pesan Error:  " & ex.Message, "btnCetakExcel_Click Error")
+        Finally
+            Call myCDBConnection.CloseConn(CONN_.dbMain, -1)
+            Me.Cursor = Cursors.Default
         End Try
     End Sub
 End Class

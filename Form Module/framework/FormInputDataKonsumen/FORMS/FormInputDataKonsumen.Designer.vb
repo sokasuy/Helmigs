@@ -64,6 +64,14 @@ Partial Class FormInputDataKonsumen
         Me.lblCari = New System.Windows.Forms.Label()
         Me.cboKriteria = New System.Windows.Forms.ComboBox()
         Me.dgvView = New System.Windows.Forms.DataGridView()
+        Me.btnBrowse = New System.Windows.Forms.Button()
+        Me.btnExportExcel = New System.Windows.Forms.Button()
+        Me.tbNamaSimpan = New System.Windows.Forms.TextBox()
+        Me.tbPathSimpan = New System.Windows.Forms.TextBox()
+        Me.lblNamaSimpan = New System.Windows.Forms.Label()
+        Me.lblSimpanKeDrive = New System.Windows.Forms.Label()
+        Me.pnlExportExcel = New System.Windows.Forms.Panel()
+        Me.fbdExport = New System.Windows.Forms.FolderBrowserDialog()
         Me.gbDataEntry.SuspendLayout()
         Me.gbCariKonsumen.SuspendLayout()
         CType(Me.dgvCariKonsumen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +79,7 @@ Partial Class FormInputDataKonsumen
         CType(Me.dgvKupon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlNavigasi.SuspendLayout()
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlExportExcel.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -81,7 +90,7 @@ Partial Class FormInputDataKonsumen
         Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.lblTitle.Location = New System.Drawing.Point(0, 0)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(934, 25)
+        Me.lblTitle.Size = New System.Drawing.Size(984, 25)
         Me.lblTitle.TabIndex = 181
         Me.lblTitle.Text = "INPUT DATA KONSUMEN"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -287,7 +296,7 @@ Partial Class FormInputDataKonsumen
         Me.btnKeluar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnKeluar.Image = CType(resources.GetObject("btnKeluar.Image"), System.Drawing.Image)
         Me.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnKeluar.Location = New System.Drawing.Point(802, 280)
+        Me.btnKeluar.Location = New System.Drawing.Point(802, 98)
         Me.btnKeluar.Name = "btnKeluar"
         Me.btnKeluar.Size = New System.Drawing.Size(120, 54)
         Me.btnKeluar.TabIndex = 14
@@ -313,7 +322,7 @@ Partial Class FormInputDataKonsumen
         Me.gbView.Controls.Add(Me.dgvView)
         Me.gbView.Location = New System.Drawing.Point(12, 340)
         Me.gbView.Name = "gbView"
-        Me.gbView.Size = New System.Drawing.Size(910, 370)
+        Me.gbView.Size = New System.Drawing.Size(960, 370)
         Me.gbView.TabIndex = 202
         Me.gbView.TabStop = False
         Me.gbView.Text = "VIEW"
@@ -325,9 +334,9 @@ Partial Class FormInputDataKonsumen
         Me.dgvKupon.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvKupon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvKupon.Location = New System.Drawing.Point(557, 67)
+        Me.dgvKupon.Location = New System.Drawing.Point(659, 67)
         Me.dgvKupon.Name = "dgvKupon"
-        Me.dgvKupon.Size = New System.Drawing.Size(347, 263)
+        Me.dgvKupon.Size = New System.Drawing.Size(295, 263)
         Me.dgvKupon.TabIndex = 185
         '
         'lblSorting
@@ -383,6 +392,7 @@ Partial Class FormInputDataKonsumen
         '
         'pnlNavigasi
         '
+        Me.pnlNavigasi.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.pnlNavigasi.Controls.Add(Me.btnAddNew)
         Me.pnlNavigasi.Controls.Add(Me.btnFFBack)
         Me.pnlNavigasi.Controls.Add(Me.lblRecord)
@@ -514,20 +524,87 @@ Partial Class FormInputDataKonsumen
         '
         Me.dgvView.AllowUserToAddRows = False
         Me.dgvView.AllowUserToDeleteRows = False
-        Me.dgvView.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvView.Location = New System.Drawing.Point(6, 67)
         Me.dgvView.Name = "dgvView"
-        Me.dgvView.Size = New System.Drawing.Size(545, 263)
+        Me.dgvView.Size = New System.Drawing.Size(647, 263)
         Me.dgvView.TabIndex = 130
+        '
+        'btnBrowse
+        '
+        Me.btnBrowse.Image = CType(resources.GetObject("btnBrowse.Image"), System.Drawing.Image)
+        Me.btnBrowse.Location = New System.Drawing.Point(277, 6)
+        Me.btnBrowse.Name = "btnBrowse"
+        Me.btnBrowse.Size = New System.Drawing.Size(24, 24)
+        Me.btnBrowse.TabIndex = 204
+        Me.btnBrowse.UseVisualStyleBackColor = True
+        '
+        'btnExportExcel
+        '
+        Me.btnExportExcel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnExportExcel.Image = CType(resources.GetObject("btnExportExcel.Image"), System.Drawing.Image)
+        Me.btnExportExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnExportExcel.Location = New System.Drawing.Point(306, 8)
+        Me.btnExportExcel.Name = "btnExportExcel"
+        Me.btnExportExcel.Size = New System.Drawing.Size(120, 54)
+        Me.btnExportExcel.TabIndex = 206
+        Me.btnExportExcel.Text = "EXCEL"
+        Me.btnExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnExportExcel.UseVisualStyleBackColor = True
+        '
+        'tbNamaSimpan
+        '
+        Me.tbNamaSimpan.Location = New System.Drawing.Point(101, 36)
+        Me.tbNamaSimpan.Name = "tbNamaSimpan"
+        Me.tbNamaSimpan.Size = New System.Drawing.Size(199, 20)
+        Me.tbNamaSimpan.TabIndex = 205
+        '
+        'tbPathSimpan
+        '
+        Me.tbPathSimpan.Location = New System.Drawing.Point(101, 8)
+        Me.tbPathSimpan.Name = "tbPathSimpan"
+        Me.tbPathSimpan.Size = New System.Drawing.Size(172, 20)
+        Me.tbPathSimpan.TabIndex = 203
+        '
+        'lblNamaSimpan
+        '
+        Me.lblNamaSimpan.AutoSize = True
+        Me.lblNamaSimpan.Location = New System.Drawing.Point(16, 39)
+        Me.lblNamaSimpan.Name = "lblNamaSimpan"
+        Me.lblNamaSimpan.Size = New System.Drawing.Size(79, 13)
+        Me.lblNamaSimpan.TabIndex = 208
+        Me.lblNamaSimpan.Text = "Nama Simpan :"
+        '
+        'lblSimpanKeDrive
+        '
+        Me.lblSimpanKeDrive.AutoSize = True
+        Me.lblSimpanKeDrive.Location = New System.Drawing.Point(4, 11)
+        Me.lblSimpanKeDrive.Name = "lblSimpanKeDrive"
+        Me.lblSimpanKeDrive.Size = New System.Drawing.Size(91, 13)
+        Me.lblSimpanKeDrive.TabIndex = 207
+        Me.lblSimpanKeDrive.Text = "Simpan ke Drive :"
+        '
+        'pnlExportExcel
+        '
+        Me.pnlExportExcel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnlExportExcel.Controls.Add(Me.tbPathSimpan)
+        Me.pnlExportExcel.Controls.Add(Me.btnBrowse)
+        Me.pnlExportExcel.Controls.Add(Me.lblSimpanKeDrive)
+        Me.pnlExportExcel.Controls.Add(Me.btnExportExcel)
+        Me.pnlExportExcel.Controls.Add(Me.lblNamaSimpan)
+        Me.pnlExportExcel.Controls.Add(Me.tbNamaSimpan)
+        Me.pnlExportExcel.Location = New System.Drawing.Point(541, 262)
+        Me.pnlExportExcel.Name = "pnlExportExcel"
+        Me.pnlExportExcel.Size = New System.Drawing.Size(435, 72)
+        Me.pnlExportExcel.TabIndex = 209
         '
         'FormInputDataKonsumen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AliceBlue
-        Me.ClientSize = New System.Drawing.Size(934, 716)
+        Me.ClientSize = New System.Drawing.Size(984, 716)
+        Me.Controls.Add(Me.pnlExportExcel)
         Me.Controls.Add(Me.gbView)
         Me.Controls.Add(Me.gbCariKonsumen)
         Me.Controls.Add(Me.lblEntryType)
@@ -549,6 +626,8 @@ Partial Class FormInputDataKonsumen
         Me.pnlNavigasi.ResumeLayout(False)
         Me.pnlNavigasi.PerformLayout()
         CType(Me.dgvView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlExportExcel.ResumeLayout(False)
+        Me.pnlExportExcel.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -595,4 +674,12 @@ Partial Class FormInputDataKonsumen
     Friend WithEvents btnCariKonsumen As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents dgvKupon As DataGridView
+    Friend WithEvents btnBrowse As Button
+    Friend WithEvents btnExportExcel As Button
+    Friend WithEvents tbNamaSimpan As TextBox
+    Friend WithEvents tbPathSimpan As TextBox
+    Friend WithEvents lblNamaSimpan As Label
+    Friend WithEvents lblSimpanKeDrive As Label
+    Friend WithEvents pnlExportExcel As Panel
+    Friend WithEvents fbdExport As FolderBrowserDialog
 End Class

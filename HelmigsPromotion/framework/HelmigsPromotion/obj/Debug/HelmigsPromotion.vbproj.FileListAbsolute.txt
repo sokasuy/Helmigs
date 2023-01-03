@@ -76,6 +76,7 @@ G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\D
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\FormGenerateMasterKuponUndian.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\FormInputDataKonsumen.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\Npgsql.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\MySql.Data.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.ValueTuple.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Threading.Tasks.Extensions.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -83,9 +84,16 @@ G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\D
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Text.Json.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Net.Sockets.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\Google.Protobuf.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\ZstdNet.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\K4os.Compression.LZ4.Streams.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\Ubiety.Dns.Core.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\netstandard.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Numerics.Vectors.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Buffers.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Text.Encodings.Web.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\K4os.Compression.LZ4.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\K4os.Hash.xxHash.dll
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\CDataGridViewManipulation.pdb
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\CDataGridViewManipulation.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\CDBConnection.pdb
@@ -119,6 +127,7 @@ G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\D
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\FormInputDataKonsumen.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\FormInputDataKonsumen.dll.config
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\Npgsql.xml
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\MySql.Data.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.ValueTuple.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Threading.Tasks.Extensions.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
@@ -126,6 +135,7 @@ G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\D
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Text.Json.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Numerics.Vectors.xml
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Buffers.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\System.Text.Encodings.Web.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\obj\Debug\HelmigsPromotion.vbproj.AssemblyReference.cache
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\obj\Debug\HelmigsPromotion.exe.config
