@@ -24,3 +24,4 @@ G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKuponUndi
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKuponUndian\obj\Debug\FormGenerateMasterKuponUndian.dll
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKuponUndian\obj\Debug\FormGenerateMasterKuponUndian.xml
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKuponUndian\obj\Debug\FormGenerateMasterKuponUndian.pdb
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormGenerateMasterKuponUndian\obj\Debug\FormGenerateMasterKuponUndian.vbproj.AssemblyReference.cache

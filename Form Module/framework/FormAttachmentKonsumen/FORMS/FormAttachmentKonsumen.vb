@@ -1,4 +1,6 @@
 ﻿Public Class FormAttachmentKonsumen
+    Implements IDisposable
+
     Private isDataPrepared As Boolean
     Private stSQL As String
     Private isNew As Boolean

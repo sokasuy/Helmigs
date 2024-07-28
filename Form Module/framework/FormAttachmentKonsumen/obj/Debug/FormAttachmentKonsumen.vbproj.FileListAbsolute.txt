@@ -9,3 +9,4 @@ G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.dll
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.xml
 G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.pdb
+G:\DESKTOP APPLICATION\HELMIGS\Form Module\framework\FormAttachmentKonsumen\obj\Debug\FormAttachmentKonsumen.vbproj.AssemblyReference.cache
