@@ -148,3 +148,5 @@ G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\obj\D
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\obj\Debug\HelmigsPromotion.exe
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\obj\Debug\HelmigsPromotion.xml
 G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\obj\Debug\HelmigsPromotion.pdb
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\BCrypt.Net-Next.dll
+G:\DESKTOP APPLICATION\HELMIGS\HelmigsPromotion\framework\HelmigsPromotion\bin\Debug\BCrypt.Net-Next.xml
